@@ -1,0 +1,8 @@
+version: '3'
+services:
+  persistence-pages-tests:
+    build: ./tests/
+    depends_on:
+    - persistence-pages-app
+    environment:
+    - API_BASE_URL=http://persistence-pages-app:9040/
