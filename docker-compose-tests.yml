@@ -5,4 +5,4 @@ services:
     depends_on:
     - persistence-pages-app
     environment:
-    - API_BASE_URL=http://persistence-pages-app:9040/
+    - API_BASE_URL=http://persistence-pages-app:${SERVICE_PORT}/

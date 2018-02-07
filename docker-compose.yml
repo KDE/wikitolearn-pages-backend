@@ -1,14 +1,12 @@
 version: '3'
 services:
   persistence-pages-app:
-    build: ./src/
+    build:
+      context: ./src/
+      args:
+        SERVICE_PORT: ${SERVICE_PORT}
+    image: wikitolearn/pages
     ports:
-    - "9040:9040"
-  persistence-pages-mongodb:
-    image: "mongo:3.4"
-    volumes:
-    - persistence-pages-mongodb-configdb:/data/configdb
-    - persistence-pages-mongodb-db:/data/db
-volumes:
-  persistence-pages-mongodb-configdb:
-  persistence-pages-mongodb-db:
+    - "${SERVICE_PORT}:${SERVICE_PORT}"
+    environment:
+    - MONGO_HOST=${MONGO_HOST}
