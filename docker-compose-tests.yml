@@ -1,8 +1,8 @@
-version: '3'
+version: '3.4'
 services:
-  persistence-pages-tests:
+  pages-backend-tests:
     build: ./tests/
     depends_on:
-    - persistence-pages-app
+    - pages-backend
     environment:
-    - API_BASE_URL=http://persistence-pages-app:${SERVICE_PORT}/
+      API_BASE_URL: http://pages-backend:${SERVICE_PORT}/

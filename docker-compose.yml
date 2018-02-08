@@ -1,12 +1,12 @@
-version: '3'
+version: '3.4'
 services:
-  persistence-pages-app:
+  pages-backend:
     build:
       context: ./src/
       args:
         SERVICE_PORT: ${SERVICE_PORT}
-    image: wikitolearn/pages
+    image: wikitolearn/pages-backend
     ports:
-    - "${SERVICE_PORT}:${SERVICE_PORT}"
+      - "${SERVICE_PORT}:${SERVICE_PORT}"
     environment:
-    - MONGO_HOST=${MONGO_HOST}
+      MONGO_HOST: ${MONGO_HOST}

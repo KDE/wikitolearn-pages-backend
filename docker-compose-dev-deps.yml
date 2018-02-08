@@ -1,10 +1,10 @@
-version: '3'
+version: '3.4'
 services:
-  persistence-pages-mongodb:
+  pages-backend-mongodb:
     image: "mongo:3.4"
     volumes:
-    - persistence-pages-mongodb-configdb:/data/configdb
-    - persistence-pages-mongodb-db:/data/db
+      - pages-backend-mongodb-configdb:/data/configdb
+      - pages-backend-mongodb-db:/data/db
 volumes:
-  persistence-pages-mongodb-configdb:
-  persistence-pages-mongodb-db:
+  pages-backend-mongodb-configdb:
+  pages-backend-mongodb-db:
